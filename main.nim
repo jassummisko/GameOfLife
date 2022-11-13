@@ -8,6 +8,13 @@ var isPlaying: bool = false
 var speed: int = 10
 var color: int = 7
 
+proc drawMouse(position: (int, int), size: int): void =
+    let x = position[0]+1
+    let y = position[1]+1
+    line(x, y, x+size, y)
+    line(x, y, x, y+size)
+    line(x, y, x+size * 2, y+size * 2)
+
 proc gameInit() =
     for x in 0..fieldWidth:
         for y in 0..fieldHeight:
@@ -50,6 +57,11 @@ proc gameDraw() =
             if b.alive:
                 pset(x, y)
 
+    setColor(3)
+    drawMouse(mouse(), 2)
+
 nico.init(orgName, appName)
+hideMouse()
+fixedSize(true)
 nico.createWindow(appName, windowSize[0], windowSize[1], windowScale, fullscreen)
 nico.run(gameInit, gameUpdate, gameDraw)
