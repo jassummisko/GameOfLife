@@ -2,7 +2,7 @@
 This is a project used to practice Nim and the Nico library.
 
 # Demonstration
-<img src="croppedGif.gif" width="250" height="250"/>
+<img src="croppedGif.gif" width="400" height="400"/>
 
 # Controls
 Should you want to compile this and try it out yourself:
